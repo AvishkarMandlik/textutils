@@ -25,9 +25,9 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary" onClick={handleUpClick}>Convert To UPR</button>
         <div className="container my-2 d-flex align-items-center flex-column">
           <h2>Your Text Summary</h2><br />
-          <p className='fs-5'><span className='string-words'>{text.split(" ").length}</span> Words &
-          <span className='string-char'> {text.length} Characters</span><br />
-          <span className='minutes-to-read'>{0.008 * text.split(" ").length} Minutes To Read</span>
+          <p className='fs-5'><span className='string-words'><b>{text.split(" ").length}</b></span> Words &
+          <span className='string-char'> <b>{text.length}</b></span> Characters<br/>
+          <span className='minutes-to-read'><b>{0.008 * text.split(" ").length}</b></span> Minutes To Read
           </p>
 
         </div>
