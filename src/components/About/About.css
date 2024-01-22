@@ -1,0 +1,24 @@
+
+.about-us{
+    border: 1px solid grey !important;
+    border-radius: 10px;
+}
+
+.feature{
+    width: 600px;
+    margin-right: 10px;
+    border: 1px solid grey !important;
+    border-radius: 10px;
+}
+
+.contact-us{
+    width: 650px;
+    margin-left: 10px;
+    border: 1px solid grey !important;
+    border-radius: 10px;
+}
+
+.heading{
+    color: #3498db;
+    font-family: 'Arial', sans-serif;
+}
