@@ -19,6 +19,11 @@ export default function TextForm(props) {
     navigator.clipboard.writeText(text.value);
   }
 
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  }
+
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
@@ -40,6 +45,7 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary mx-2" onClick={handleUpClick}>Convert To UPR</button>
         <button className="btn btn-outline-primary mx-2" onClick={handleLwClick}>Convert To LWR</button>
         <button className="btn btn-outline-primary mx-2" onClick={handleCopy}>Copy To Clipboard</button>
+        <button className="btn btn-outline-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
         <button className="btn btn-outline-primary mx-2" onClick={speak}>Speak 🗣️</button>
         <div className="container my-2 d-flex align-items-center flex-column">
           <h2>Your Text Summary</h2><br />
