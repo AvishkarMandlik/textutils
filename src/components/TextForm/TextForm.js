@@ -23,6 +23,10 @@ export default function TextForm(props) {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
   }
+  
+  const handleLClearText = () => {
+    setText("");
+  }
 
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
@@ -47,6 +51,7 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary mx-2" onClick={handleCopy}>Copy To Clipboard</button>
         <button className="btn btn-outline-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
         <button className="btn btn-outline-primary mx-2" onClick={speak}>Speak 🗣️</button>
+        <button className="btn btn-outline-primary mx-2" onClick={handleLClearText}>Clear Text</button>
         <div className="container my-2 d-flex align-items-center flex-column">
           <h2>Your Text Summary</h2><br />
           <p className='fs-5'><span className='string-words'><b>{text.split(" ").length}</b></span> Words &
