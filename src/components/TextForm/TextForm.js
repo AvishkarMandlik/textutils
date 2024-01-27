@@ -24,6 +24,11 @@ export default function TextForm(props) {
     setText(newText.join(" "));
   }
   
+  const handleReverse = () => {
+    const newText = text.split('').reverse().join('');
+    setText(newText);
+  }
+
   const handleLClearText = () => {
     setText("");
   }
@@ -46,12 +51,13 @@ export default function TextForm(props) {
             <h1>{props.heading} </h1>
             <textarea className="form-control" placeholder='Enter your text here...' id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
         </div>
-        <button className="btn btn-outline-primary mx-2" onClick={handleUpClick}>Convert To UPR</button>
-        <button className="btn btn-outline-primary mx-2" onClick={handleLwClick}>Convert To LWR</button>
-        <button className="btn btn-outline-primary mx-2" onClick={handleCopy}>Copy To Clipboard</button>
-        <button className="btn btn-outline-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-        <button className="btn btn-outline-primary mx-2" onClick={speak}>Speak 🗣️</button>
-        <button className="btn btn-outline-primary mx-2" onClick={handleLClearText}>Clear Text</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleUpClick}>Convert To UPR</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleLwClick}>Convert To LWR</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleCopy}>Copy To Clipboard</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button className="btn btn-outline-primary m-2" onClick={speak}>Speak 🗣️</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleReverse}>Reverse Text</button>
+        <button className="btn btn-outline-primary m-2" onClick={handleLClearText}>Clear Text</button>
         <div className="container my-2 d-flex align-items-center flex-column">
           <h2>Your Text Summary</h2><br />
           <p className='fs-5'><span className='string-words'><b>{text.split(" ").length}</b></span> Words &
