@@ -3,7 +3,7 @@ import React from 'react'
 export default function Navbar(props) {
   return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/"><b className='grays'>{props.title}</b></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,6 +15,7 @@ export default function Navbar(props) {
                   <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
               </ul>
+              
             </div>
           </div>
         </nav>
