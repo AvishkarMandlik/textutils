@@ -7,9 +7,18 @@ import TextForm from './components/TextForm/TextForm';
 function App() {
   const [mode, setMode] = useState("light");
 
+  const toggleMode = () =>{
+    if(mode === "light"){
+      setMode("dark");
+    }
+    else{
+      setMode("light");
+    }
+  }
+
   return (    
    <>
-    <Navbar title="TextUtils" mode={mode}/>
+    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
     <div className="container">
      <TextForm heading="Enter the Text to Analyze Below"/>
      {/* <About /> */}

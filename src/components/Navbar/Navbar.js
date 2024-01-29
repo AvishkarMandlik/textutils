@@ -15,8 +15,13 @@ export default function Navbar(props) {
                   <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
               </ul>
-              
-            </div>
+           
+            <div className="form-check form-switch text-light">
+                {/* <span class="emoji" id="sunEmoji">☀️</span> */}
+                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="modeSwitch"/>
+                {/* <span class="emoji" id="moonEmoji">🌙</span> */}
+              </div>
+              </div>
           </div>
         </nav>
     </div>
