@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Navbar(props) {
   return (
-    <div>
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/"><b className='grays'>{props.title}</b></a>
@@ -15,15 +14,12 @@ export default function Navbar(props) {
                   <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
               </ul>
-           
-            <div className="form-check form-switch text-light">
-                {/* <span class="emoji" id="sunEmoji">☀️</span> */}
-                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="modeSwitch"/>
-                {/* <span class="emoji" id="moonEmoji">🌙</span> */}
+              <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+                  <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
+                  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
               </div>
-              </div>
+            </div>
           </div>
         </nav>
-    </div>
   )
 }
