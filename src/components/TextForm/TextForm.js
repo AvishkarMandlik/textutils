@@ -7,30 +7,36 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase()
     setText(newText)
+    props.showAlert("Converted to Uppercase", "success")
   }
   const handleLwClick = () => {
     let newText = text.toLowerCase()
     setText(newText)
+    props.showAlert("Converted to Lowercase", "success")
   }
   
   const handleCopy = () => {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Your text is copied to clipboard", "success")
   }
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("You have removed your extra spaces from the text", "success")
   }
   
   const handleReverse = () => {
     const newText = text.split('').reverse().join('');
     setText(newText);
+    props.showAlert("You revered your text", "success")
   }
 
   const handleLClearText = () => {
     setText("");
+    props.showAlert("You removed all text", "success")
   }
 
   const speak = () => {
