@@ -65,14 +65,12 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary m-2" onClick={handleReverse}>Reverse Text</button>
         <button className="btn btn-outline-primary m-2" onClick={handleLClearText}>Clear Text</button>
     <div/>
-        <div className="container my-2 d-flex align-items-center flex-column">
-          <h2>Your Text Summary</h2><br />
-          <p className='fs-5'><span className='string-words'><b>{text.split(" ").length}</b></span> Words &
-          <span className='string-char'> <b>{text.length}</b></span> Characters<br/>
-          <span className='minutes-to-read'><b>{0.008 * text.split(" ").length}</b></span> Minutes To Read
-          <h2>Preview</h2>
+        <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
+            <h2>Your text summary</h2>
+            <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+            <p>{0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes read</p>
+            <h2>Preview</h2>
             <p>{text.length>0?text:"Nothing to preview!"}</p>
-          </p>
         </div>
     </div>
     </>
