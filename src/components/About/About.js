@@ -1,13 +1,13 @@
 import React from 'react' 
 import './About.css'
 
-export default function About() {
+export default function About(props) {
  
   return (
     <div>
-        <div className="container mt-5 " >
+        <div className="container mt-5">
             <div className="row">
-                <div className="col-md-12 fs-5 about-us" >
+                <div className="col-md-12 fs-5 about-us" style={{color: props.mode==='dark'?'white':'#042743',backgroundColor: props.mode==='light'?'white':'black'}}>
                     <h1 className='heading'>About Us</h1>
                     <p>Welcome to Text Utility, your go-to platform for text conversion and manipulation. We are passionate about making text-related tasks simple and accessible for everyone.</p>
                     <p>Our mission is to provide a user-friendly tool that allows you to convert text to upper or lower case, listen to the text using speech synthesis, clear the text input, and copy the results effortlessly.</p>
@@ -15,9 +15,9 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="container mt-5 px-3" >
+            <div className="container mt-5 px-3">
                 <div className="row ">
-                    <div className="col-md-6 fs-5 feature" >
+                    <div className="col-md-6 fs-5 feature" style={{color: props.mode==='dark'?'white':'#042743',backgroundColor: props.mode==='light'?'white':'black'}}>
                         <h2 className='heading'>Features</h2>
                         <ul>
                         <li>Text Conversion to Upper Case</li>
@@ -28,7 +28,7 @@ export default function About() {
                         </ul>
                 </div>
 
-                <div className="col-md-6 fs-5 contact-us" >
+                <div className="col-md-6 fs-5 contact-us" style={{color: props.mode==='dark'?'white':'#042743',backgroundColor: props.mode==='light'?'white':'black'}}>
                     <h2 className='heading'>Contact Us</h2>
                     <p>If you have any questions or feedback, feel free to reach out to us:</p>
                     <p>Email: mandlikavi121@gmail.com</p>
