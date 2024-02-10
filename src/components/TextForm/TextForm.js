@@ -56,13 +56,13 @@ export default function TextForm(props) {
             <h1>{props.heading} </h1>
             <textarea className="form-control" placeholder='Enter your text here...' id="myBox" rows="8" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}}></textarea>
         </div>
-        <button className="btn btn-outline-primary m-2" onClick={handleUpClick}>Convert To UPR</button>
-        <button className="btn btn-outline-primary m-2" onClick={handleLwClick}>Convert To LWR</button>
-        <button className="btn btn-outline-primary m-2" onClick={handleCopy}>Copy To Clipboard</button>
-        <button className="btn btn-outline-primary m-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-        <button className="btn btn-outline-primary m-2" onClick={speak}>Speak 🗣️</button>
-        <button className="btn btn-outline-primary m-2" onClick={handleReverse}>Reverse Text</button>
-        <button className="btn btn-outline-primary m-2" onClick={handleLClearText}>Clear Text</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0}  onClick={handleUpClick}>Convert To UPR</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={handleLwClick}>Convert To LWR</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={handleCopy}>Copy To Clipboard</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={speak}>Speak 🗣️</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={handleReverse}>Reverse Text</button>
+        <button className="btn btn-outline-primary m-2" disabled={text.length===0} onClick={handleLClearText}>Clear Text</button>
     <div/>
         <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
             <h2>Your text summary</h2>
