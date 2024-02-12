@@ -15,10 +15,7 @@ export default function TextForm(props) {
   }
   
   const handleCopy = () => {
-    let text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
     props.showAlert("Your text is copied to clipboard", "success")
   }
 
